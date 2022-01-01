@@ -1,0 +1,28 @@
+{
+  "name": "irreguitar-pkg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sawadyecma/irreguitar-pkg.git"
+  },
+  "author": "dyecma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sawadyecma/irreguitar-pkg/issues"
+  },
+  "homepage": "https://github.com/sawadyecma/irreguitar-pkg#readme",
+  "devDependencies": {
+    "@types/jest": "^27.4.0",
+    "jest": "^27.4.5",
+    "ts-jest": "^27.1.2",
+    "typescript": "^4.5.4"
+  },
+  "jest": {
+    "preset": "ts-jest"
+  }
+}
