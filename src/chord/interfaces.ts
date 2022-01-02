@@ -1,7 +1,7 @@
 import { Absnote, Chord } from "../sound/interfaces";
 
 export interface ChordParser {
-	parse(chord: Chord): string
+	parse(chord: Chord): string|undefined
 }
 
 export interface ChordAnalyzer{
@@ -9,7 +9,7 @@ export interface ChordAnalyzer{
 }
 
 export interface ChordNamer{
-	name(chord: Chord, analyzed: AnalyzedChord):string
+	name(chord: Chord, analyzed: AnalyzedChord):string|undefined
 }
 
 // 長調か短調か
