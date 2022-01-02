@@ -1,11 +1,6 @@
 import { Absnote, Chord } from "../sound/interfaces";
 import { AnalyzedChord, ChordAnalyzer, Lentype } from "./interfaces";
 
-type consist = {
-    note: Absnote
-    interval: number
-}
-
 export class ChordAnalyzerImpl implements ChordAnalyzer{
     analyze(chord: Chord): AnalyzedChord{
         const rootNote = chord.getRootNote()
