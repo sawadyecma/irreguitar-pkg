@@ -15,16 +15,16 @@ describe('getValue', ()=>{
     })
 })
 
-describe('name', ()=>{
+describe('getName', ()=>{
     test('A4',()=>{
         const a = new AbsnoteImpl(Absnotes.A4)
-        const ret = a.name()
+        const ret = a.getName()
         expect(ret).toBe("A4")
     })
 
     test('B2',()=>{
         const a = new AbsnoteImpl(Absnotes.B2)
-        const ret = a.name()
+        const ret = a.getName()
         expect(ret).toBe("B2")
     })
 })

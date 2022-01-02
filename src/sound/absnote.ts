@@ -15,7 +15,7 @@ export class AbsnoteImpl implements Absnote{
 		return this.value
 	}
 
-	public name():string{
+	public getName():string{
 		return getAbsnoteName(this.value).key
 	}
 

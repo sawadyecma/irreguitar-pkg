@@ -2,7 +2,7 @@ import { Absnotes } from "./absnotes";
 
 export interface Absnote {
 	getValue(): Absnotes
-	name(): string
+	getName(): string
     up(halfToneDiff: number): Absnote
 	diff(target: Absnote): number
 }
