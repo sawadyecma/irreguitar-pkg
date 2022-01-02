@@ -1,4 +1,4 @@
-import { Chord } from "../sound/interfaces";
+import { Absnote, Chord } from "../sound/interfaces";
 
 export interface ChordParser {
 	parse(chord: Chord): string
@@ -18,4 +18,5 @@ export type Lentype = "None" | "Major" | "Minor" | "Invalid"
 export type AnalyzedChord = {
     thirdType: Lentype
     seventhType: Lentype
+	lowersByRoot: Absnote[]
 }

@@ -14,20 +14,17 @@ export class ChordAnalyzerImpl implements ChordAnalyzer{
             return {
                 thirdType: "None",
                 seventhType: "None",
+                lowersByRoot: [],
             }
         }
 
-        const consists: consist[] = notes.map((note)=>{
-            return { note: note, interval: rootNote.diff(note) }
-        })
+        const highersByRoot = notes.filter((note)=>rootNote.diff(note)>0)
+        const lowersByRoot = notes.filter((note)=>rootNote.diff(note)<0)
 
-        const highersByRoot = consists.filter((c)=>c.interval>0)
-        const lowersByRoot = consists.filter((c)=>c.interval<0)
-
-        // TODO 分数コードの結果もAnalyzedChordに追加する
         return {
-            thirdType: this.getThirdType(highersByRoot),
-            seventhType: this.getSeventhType(highersByRoot)
+            thirdType: this.getThirdType(rootNote, highersByRoot),
+            seventhType: this.getSeventhType(rootNote, highersByRoot),
+            lowersByRoot: lowersByRoot,
         }
     }
 
@@ -48,15 +45,15 @@ export class ChordAnalyzerImpl implements ChordAnalyzer{
         return "None"
     }
 
-    private getThirdType(notes: consist[]): Lentype {
-        const containMinor = notes.filter((note)=> note.interval%12 === 3).length > 0
-        const containMajor = notes.filter((note)=> note.interval%12 === 4).length > 0
+    private getThirdType(rootNote: Absnote,notes: Absnote[]): Lentype {
+        const containMinor = notes.filter((note)=> rootNote.diff(note)%12 === 3).length > 0
+        const containMajor = notes.filter((note)=> rootNote.diff(note)%12 === 4).length > 0
         return this.judgeLenType(containMinor, containMajor)
     }
 
-    private getSeventhType(notes: consist[]): Lentype {
-        const containMinor = notes.filter((note)=> note.interval%12 === 10).length > 0
-        const containMajor = notes.filter((note)=> note.interval%12 === 11).length > 0
+    private getSeventhType(rootNote: Absnote, notes: Absnote[]): Lentype {
+        const containMinor = notes.filter((note)=> rootNote.diff(note)%12 === 10).length > 0
+        const containMajor = notes.filter((note)=> rootNote.diff(note)%12 === 11).length > 0
         return this.judgeLenType(containMinor, containMajor)
     }
 }
