@@ -16,6 +16,6 @@ export class ChordParserImpl implements ChordParser{
 
     parse(chord: Chord): string {
         const analyzed = this.analyzer.analyze(chord)
-        return this.namer.name(analyzed)
+        return this.namer.name(chord, analyzed)
     }
 }

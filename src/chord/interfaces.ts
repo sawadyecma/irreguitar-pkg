@@ -9,7 +9,7 @@ export interface ChordAnalyzer{
 }
 
 export interface ChordNamer{
-	name(chord: AnalyzedChord):string
+	name(chord: Chord, analyzed: AnalyzedChord):string
 }
 
 // 長調か短調か
