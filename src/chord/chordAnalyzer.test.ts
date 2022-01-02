@@ -1,6 +1,6 @@
 import { AbsnoteImpl } from "../sound/absnote"
 import { Absnotes } from "../sound/absnotes"
-import { ChordImple } from "../sound/chord"
+import { ChordImpl } from "../sound/chord"
 import { ChordAnalyzerImpl } from "./chordAnalyzer"
 import { AnalyzedChord } from "./interfaces"
 
@@ -9,7 +9,7 @@ describe('ChordAnalyzerImpl',()=>{
         const ca = new ChordAnalyzerImpl()
 
         test('C(omit3)', ()=>{
-            const chord = new ChordImple(
+            const chord = new ChordImpl(
                 new AbsnoteImpl(Absnotes.C3),
                 [],
             )
@@ -23,7 +23,7 @@ describe('ChordAnalyzerImpl',()=>{
         })
 
         test('C(Major)', ()=>{
-            const chord = new ChordImple(
+            const chord = new ChordImpl(
                 new AbsnoteImpl(Absnotes.C3),
                 [
                     new AbsnoteImpl(Absnotes.E3),
@@ -40,7 +40,7 @@ describe('ChordAnalyzerImpl',()=>{
         })
 
         test('Cm', ()=>{
-            const chord = new ChordImple(
+            const chord = new ChordImpl(
                 new AbsnoteImpl(Absnotes.C3),
                 [
                     new AbsnoteImpl(Absnotes.Eb3),
@@ -57,7 +57,7 @@ describe('ChordAnalyzerImpl',()=>{
         })
 
         test('CM7', ()=>{
-            const chord = new ChordImple(
+            const chord = new ChordImpl(
                 new AbsnoteImpl(Absnotes.C3),
                 [
                     new AbsnoteImpl(Absnotes.E3),
@@ -75,7 +75,7 @@ describe('ChordAnalyzerImpl',()=>{
         })
 
         test('Cm7', ()=>{
-            const chord = new ChordImple(
+            const chord = new ChordImpl(
                 new AbsnoteImpl(Absnotes.C3),
                 [
                     new AbsnoteImpl(Absnotes.Eb3),
@@ -93,7 +93,7 @@ describe('ChordAnalyzerImpl',()=>{
         })
 
         test('CmM7', ()=>{
-            const chord = new ChordImple(
+            const chord = new ChordImpl(
                 new AbsnoteImpl(Absnotes.C3),
                 [
                     new AbsnoteImpl(Absnotes.Eb3),

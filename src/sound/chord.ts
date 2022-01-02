@@ -1,6 +1,6 @@
 import { Absnote, Chord } from "./interfaces"
 
-export class ChordImple implements Chord{
+export class ChordImpl implements Chord{
     private rootNote: Absnote
     private notes: Absnote[]
 
