@@ -9,15 +9,15 @@ export class TurningImpl implements Turning{
         this.threads = threads
     }
     
-    Threads():Map<ThreadNum, Thread>{
+    getThreads():Map<ThreadNum, Thread>{
         return this.threads
     }
 
-    ThreadNums(): ThreadNum[]{
+    getThreadNums(): ThreadNum[]{
         return Array.from<ThreadNum>(this.threads.keys())
     }
 
-    Note(thnm: ThreadNum, flet: number): Absnote{
+    getNote(thnm: ThreadNum, flet: number): Absnote{
         const th = this.threads.get(thnm)
         if (th === undefined){
             throw new Error("Unexpected thnm")
