@@ -11,3 +11,7 @@ export interface Chord {
 	getRootNote(): Absnote
 	getNotes(): Absnote[]
 }
+
+export interface ChordFactory{
+	Create(rootNote: Absnote, notes: Absnote[]): Chord
+}
