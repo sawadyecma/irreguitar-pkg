@@ -1,8 +1,5 @@
 import { AbsnoteImpl, Absnotes } from "..";
-import { Thread, ThreadNum } from "../guitar/interfaces";
-import { ThreadImpl } from "../guitar/thread";
 import { TURNING_CATALOG } from "./catalog";
-import { TurningImpl } from "./turning";
 
 describe("Regular Turning", () => {
   const t = TURNING_CATALOG.Regular;

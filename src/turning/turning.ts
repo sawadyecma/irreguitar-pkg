@@ -3,11 +3,7 @@ import { Thread, ThreadNum } from "../guitar/interfaces";
 import { Turning } from "./interfaces";
 
 export class TurningImpl implements Turning {
-  private threads: Map<ThreadNum, Thread>;
-
-  constructor(threads: Map<ThreadNum, Thread>) {
-    this.threads = threads;
-  }
+  constructor(private threads: Map<ThreadNum, Thread>) {}
 
   getThreads(): Map<ThreadNum, Thread> {
     return this.threads;
