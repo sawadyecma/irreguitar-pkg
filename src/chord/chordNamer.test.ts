@@ -26,7 +26,8 @@ describe("name", () => {
         seventhType: "None",
         lowersByRoot: [],
       };
-      cn.name(new ChordMock(), analyzed);
+      const got = cn.name(new ChordMock(), analyzed);
+      expect(got).toBe("C(omit3)");
     });
 
     test("CM7", () => {
@@ -35,7 +36,8 @@ describe("name", () => {
         seventhType: "Major",
         lowersByRoot: [],
       };
-      cn.name(new ChordMock(), analyzed);
+      const got = cn.name(new ChordMock(), analyzed);
+      expect(got).toBe("CM7");
     });
 
     test("Cm7/D", () => {
@@ -44,7 +46,8 @@ describe("name", () => {
         seventhType: "Minor",
         lowersByRoot: [new AbsnoteImpl(Absnotes.D2)],
       };
-      cn.name(new ChordMock(), analyzed);
+      const got = cn.name(new ChordMock(), analyzed);
+      expect(got).toBe("Cm7/D");
     });
 
     test("CmM7/E", () => {
@@ -53,7 +56,8 @@ describe("name", () => {
         seventhType: "Major",
         lowersByRoot: [new AbsnoteImpl(Absnotes.E2)],
       };
-      cn.name(new ChordMock(), analyzed);
+      const got = cn.name(new ChordMock(), analyzed);
+      expect(got).toBe("CmM7/E");
     });
 
     test("CM7(omit3)", () => {
@@ -62,7 +66,8 @@ describe("name", () => {
         seventhType: "Major",
         lowersByRoot: [],
       };
-      cn.name(new ChordMock(), analyzed);
+      const got = cn.name(new ChordMock(), analyzed);
+      expect(got).toBe("CM7(omit3)");
     });
 
     test("undefined by third", () => {
@@ -71,7 +76,8 @@ describe("name", () => {
         seventhType: "Major",
         lowersByRoot: [],
       };
-      cn.name(new ChordMock(), analyzed);
+      const got = cn.name(new ChordMock(), analyzed);
+      expect(got).toBeUndefined();
     });
 
     test("undefined by seventh", () => {
@@ -80,7 +86,8 @@ describe("name", () => {
         seventhType: "Invalid",
         lowersByRoot: [],
       };
-      cn.name(new ChordMock(), analyzed);
+      const got = cn.name(new ChordMock(), analyzed);
+      expect(got).toBeUndefined();
     });
 
     test("undefined by on chord", () => {

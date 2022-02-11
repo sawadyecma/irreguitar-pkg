@@ -12,11 +12,11 @@ export class ChordNamerImpl implements ChordNamer {
 
     switch (analyzed.lowersByRoot.length) {
       case 0:
-        return `${rootNote.getName()}${stdChordType}`;
+        return `${rootNote.getName(true)}${stdChordType}`;
       case 1:
-        return `${rootNote.getName()}${stdChordType}/${
-          analyzed.lowersByRoot[0]
-        }`;
+        return `${rootNote.getName(
+          true
+        )}${stdChordType}/${analyzed.lowersByRoot[0].getName(true)}`;
       default:
         return undefined;
     }
