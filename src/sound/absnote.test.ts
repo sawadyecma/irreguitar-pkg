@@ -27,6 +27,14 @@ describe("getName", () => {
     const ret = a.getName();
     expect(ret).toBe("B2");
   });
+
+  describe("onlyPrefix=true", () => {
+    test("A4", () => {
+      const a = new AbsnoteImpl(Absnotes.A4);
+      const ret = a.getName(true);
+      expect(ret).toBe("A");
+    });
+  });
 });
 
 describe("up", () => {
