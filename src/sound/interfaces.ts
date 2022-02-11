@@ -1,17 +1,17 @@
 import { Absnotes } from "./absnotes";
 
 export interface Absnote {
-	getValue(): Absnotes
-	getName(): string
-    up(halfToneDiff: number): Absnote
-	diff(target: Absnote): number
+  getValue(): Absnotes;
+  getName(): string;
+  up(halfToneDiff: number): Absnote;
+  diff(target: Absnote): number;
 }
 
 export interface Chord {
-	getRootNote(): Absnote
-	getNotes(): Absnote[]
+  getRootNote(): Absnote;
+  getNotes(): Absnote[];
 }
 
-export interface ChordFactory{
-	Create(rootNote: Absnote, notes: Absnote[]): Chord
+export interface ChordFactory {
+  Create(rootNote: Absnote, notes: Absnote[]): Chord;
 }
