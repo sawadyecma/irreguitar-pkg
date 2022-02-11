@@ -1,19 +1,11 @@
 import { AbsnoteImpl, Absnotes } from "..";
 import { Thread, ThreadNum } from "../guitar/interfaces";
 import { ThreadImpl } from "../guitar/thread";
+import { TURNING_CATALOG } from "./catalog";
 import { TurningImpl } from "./turning";
 
 describe("Regular Turning", () => {
-  const t = new TurningImpl(
-    new Map<ThreadNum, Thread>([
-      [6, new ThreadImpl(new AbsnoteImpl(Absnotes.E3))],
-      [5, new ThreadImpl(new AbsnoteImpl(Absnotes.A4))],
-      [4, new ThreadImpl(new AbsnoteImpl(Absnotes.D4))],
-      [3, new ThreadImpl(new AbsnoteImpl(Absnotes.G4))],
-      [2, new ThreadImpl(new AbsnoteImpl(Absnotes.B5))],
-      [1, new ThreadImpl(new AbsnoteImpl(Absnotes.E5))],
-    ])
-  );
+  const t = TURNING_CATALOG.Regular;
 
   test("getThreadNums", () => {
     expect(t.getThreadNums()).toEqual([6, 5, 4, 3, 2, 1]);
