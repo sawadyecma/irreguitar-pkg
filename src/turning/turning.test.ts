@@ -11,6 +11,6 @@ describe("Regular Turning", () => {
   test("getNote", () => {
     expect(t.getNote(6, 3)).toEqual(new AbsnoteImpl(Absnotes.G3));
     expect(t.getNote(5, 0)).toEqual(new AbsnoteImpl(Absnotes.A4));
-    expect(t.getNote(4, 12)).toEqual(new AbsnoteImpl(Absnotes.D5));
+    expect(t.getNote(4, 12)).toEqual(new AbsnoteImpl(Absnotes.D6));
   });
 });
