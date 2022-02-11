@@ -8,6 +8,8 @@ export * from "./sound/chord";
 export * from "./sound/interfaces";
 export * from "./guitar/interfaces";
 export * from "./guitar/thread";
+export * from "./play/interfaces";
+export * from "./play/play";
 export * from "./turning/catalog";
 export * from "./turning/interfaces";
 export * from "./turning/turning";
