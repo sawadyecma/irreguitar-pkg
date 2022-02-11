@@ -6,3 +6,5 @@ export * from "./sound/absnote";
 export * from "./sound/absnotes";
 export * from "./sound/chord";
 export * from "./sound/interfaces";
+export * from "./turning/interfaces";
+export * from "./turning/turning";
