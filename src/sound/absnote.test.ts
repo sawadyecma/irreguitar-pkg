@@ -31,7 +31,7 @@ describe("getName", () => {
   describe("onlyPrefix=true", () => {
     test("A4", () => {
       const a = new AbsnoteImpl(Absnotes.A4);
-      const ret = a.getName(true);
+      const ret = a.getName({ onlyPrefix: true });
       expect(ret).toBe("A");
     });
   });
