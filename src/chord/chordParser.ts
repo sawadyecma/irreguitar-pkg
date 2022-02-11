@@ -1,9 +1,10 @@
+import { ChordAnalyzerImpl, ChordNamerImpl } from "..";
 import { Chord } from "../sound/interfaces";
 import { ChordAnalyzer, ChordNamer, ChordParser } from "./interfaces";
 
 export class ChordParserImpl implements ChordParser {
-  private analyzer: ChordAnalyzer;
-  private namer: ChordNamer;
+  private analyzer: ChordAnalyzer = new ChordAnalyzerImpl();
+  private namer: ChordNamer = new ChordNamerImpl();
 
   constructor(analyzer: ChordAnalyzer, namer: ChordNamer) {
     this.analyzer = analyzer;
