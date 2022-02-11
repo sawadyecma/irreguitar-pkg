@@ -15,9 +15,9 @@ export class AbsnoteImpl implements Absnote {
     return this.value;
   }
 
-  public getName(onlyPrefix = false): string {
+  public getName(opt = { onlyPrefix: false }): string {
     const ret = getAbsnoteName(this.value).key;
-    return onlyPrefix ? ret.slice(0, -1) : ret;
+    return opt.onlyPrefix ? ret.slice(0, -1) : ret;
   }
 
   public up(halfToneDiff: number): Absnote {
