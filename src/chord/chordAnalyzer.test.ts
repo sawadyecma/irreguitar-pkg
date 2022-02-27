@@ -14,6 +14,7 @@ describe("ChordAnalyzerImpl", () => {
       const want: AnalyzedChord = {
         thirdType: "None",
         seventhType: "None",
+        ninethType: "None",
         lowersByRoot: [],
       };
       expect(got).toEqual(want);
@@ -28,6 +29,7 @@ describe("ChordAnalyzerImpl", () => {
       const want: AnalyzedChord = {
         thirdType: "Major",
         seventhType: "None",
+        ninethType: "None",
         lowersByRoot: [],
       };
       expect(got).toEqual(want);
@@ -42,6 +44,7 @@ describe("ChordAnalyzerImpl", () => {
       const want: AnalyzedChord = {
         thirdType: "Minor",
         seventhType: "None",
+        ninethType: "None",
         lowersByRoot: [],
       };
       expect(got).toEqual(want);
@@ -57,6 +60,7 @@ describe("ChordAnalyzerImpl", () => {
       const want: AnalyzedChord = {
         thirdType: "Major",
         seventhType: "Major",
+        ninethType: "None",
         lowersByRoot: [],
       };
       expect(got).toEqual(want);
@@ -72,6 +76,7 @@ describe("ChordAnalyzerImpl", () => {
       const want: AnalyzedChord = {
         thirdType: "Minor",
         seventhType: "Minor",
+        ninethType: "None",
         lowersByRoot: [],
       };
       expect(got).toEqual(want);
@@ -87,6 +92,7 @@ describe("ChordAnalyzerImpl", () => {
       const want: AnalyzedChord = {
         thirdType: "Minor",
         seventhType: "Major",
+        ninethType: "None",
         lowersByRoot: [],
       };
       expect(got).toEqual(want);

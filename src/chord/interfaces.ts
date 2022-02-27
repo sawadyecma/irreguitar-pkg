@@ -15,8 +15,11 @@ export interface ChordNamer {
 // 長調か短調か
 export type Lentype = "None" | "Major" | "Minor" | "Invalid";
 
+export type NinethType = "None" | "Valid" | "Invalid";
+
 export type AnalyzedChord = {
   thirdType: Lentype;
   seventhType: Lentype;
+  ninethType: NinethType;
   lowersByRoot: Absnote[];
 };

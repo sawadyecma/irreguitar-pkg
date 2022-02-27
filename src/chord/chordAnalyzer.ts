@@ -1,3 +1,4 @@
+import { NinethType } from "..";
 import { Absnote, Chord } from "../sound/interfaces";
 import { AnalyzedChord, ChordAnalyzer, Lentype } from "./interfaces";
 
@@ -9,6 +10,7 @@ export class ChordAnalyzerImpl implements ChordAnalyzer {
       return {
         thirdType: "None",
         seventhType: "None",
+        ninethType: "None",
         lowersByRoot: [],
       };
     }
@@ -19,6 +21,7 @@ export class ChordAnalyzerImpl implements ChordAnalyzer {
     return {
       thirdType: this.getThirdType(rootNote, highersByRoot),
       seventhType: this.getSeventhType(rootNote, highersByRoot),
+      ninethType: this.getNinethType(rootNote, highersByRoot),
       lowersByRoot: lowersByRoot,
     };
   }
@@ -51,5 +54,19 @@ export class ChordAnalyzerImpl implements ChordAnalyzer {
     const containMajor =
       notes.filter((note) => rootNote.diff(note) % 12 === 11).length > 0;
     return this.judgeLenType(containMinor, containMajor);
+  }
+
+  private getNinethType(rootNote: Absnote, notes: Absnote[]): NinethType {
+    const containNineth =
+      notes.filter((note) => rootNote.diff(note) % 12 === 2).length > 0;
+    const containObstacleForNineth =
+      notes.filter((note) => [1, 3].includes(rootNote.diff(note) % 12)).length >
+      0;
+
+    return containNineth
+      ? containObstacleForNineth
+        ? "Invalid"
+        : "Valid"
+      : "None";
   }
 }
