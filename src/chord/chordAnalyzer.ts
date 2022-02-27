@@ -58,10 +58,15 @@ export class ChordAnalyzerImpl implements ChordAnalyzer {
 
   private getNinethType(rootNote: Absnote, notes: Absnote[]): NinethType {
     const containNineth =
-      notes.filter((note) => rootNote.diff(note) % 12 === 2).length > 0;
+      notes.filter((note) => {
+        const diff = rootNote.diff(note);
+        return diff >= 14 && diff % 12 === 2;
+      }).length > 0;
     const containObstacleForNineth =
-      notes.filter((note) => [1, 3].includes(rootNote.diff(note) % 12)).length >
-      0;
+      notes.filter((note) => {
+        const diff = rootNote.diff(note);
+        return diff >= 14 && [1, 3].includes(diff % 12);
+      }).length > 0;
 
     return containNineth
       ? containObstacleForNineth
