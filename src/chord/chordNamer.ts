@@ -45,7 +45,7 @@ const analyzedTransfomer: {
   None: {
     None: {
       None: "(omit3)",
-      Valid: "add9",
+      Valid: "add9(omit3)",
       Invalid: undefined,
     },
     Major: {
@@ -54,8 +54,8 @@ const analyzedTransfomer: {
       Invalid: undefined,
     },
     Minor: {
-      None: "m7(omit3)",
-      Valid: "m9(omit3)",
+      None: "7(omit3)",
+      Valid: "9(omit3)",
       Invalid: undefined,
     },
     Invalid: undefined,

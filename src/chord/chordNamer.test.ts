@@ -107,7 +107,115 @@ describe("name", () => {
           new AbsnoteImpl(Absnotes.E2),
         ],
       };
-      cn.name(new ChordMock(), analyzed);
+      const got = cn.name(new ChordMock(), analyzed);
+      expect(got).toBeUndefined();
+    });
+
+    describe("基本的なadd9", () => {
+      test("Cadd9", () => {
+        const analyzed: AnalyzedChord = {
+          thirdType: "Major",
+          seventhType: "None",
+          ninethType: "Valid",
+          lowersByRoot: [],
+        };
+        const got = cn.name(new ChordMock(), analyzed);
+        expect(got).toBe("Cadd9");
+      });
+
+      test("Cmadd9", () => {
+        const analyzed: AnalyzedChord = {
+          thirdType: "Minor",
+          seventhType: "None",
+          ninethType: "Valid",
+          lowersByRoot: [],
+        };
+        const got = cn.name(new ChordMock(), analyzed);
+        expect(got).toBe("Cmadd9");
+      });
+
+      test("Cadd9(omit3)", () => {
+        const analyzed: AnalyzedChord = {
+          thirdType: "None",
+          seventhType: "None",
+          ninethType: "Valid",
+          lowersByRoot: [],
+        };
+        const got = cn.name(new ChordMock(), analyzed);
+        expect(got).toBe("Cadd9(omit3)");
+      });
+    });
+
+    describe("omit3な9th", () => {
+      test("C9(omit3)", () => {
+        const analyzed: AnalyzedChord = {
+          thirdType: "None",
+          seventhType: "Minor",
+          ninethType: "Valid",
+          lowersByRoot: [],
+        };
+        const got = cn.name(new ChordMock(), analyzed);
+        expect(got).toBe("C9(omit3)");
+      });
+
+      test("CM9(omit3)", () => {
+        const analyzed: AnalyzedChord = {
+          thirdType: "None",
+          seventhType: "Major",
+          ninethType: "Valid",
+          lowersByRoot: [],
+        };
+        const got = cn.name(new ChordMock(), analyzed);
+        expect(got).toBe("CM9(omit3)");
+      });
+    });
+
+    describe("7thがMinorな9th", () => {
+      test("C9", () => {
+        const analyzed: AnalyzedChord = {
+          thirdType: "Major",
+          seventhType: "Minor",
+          ninethType: "Valid",
+          lowersByRoot: [],
+        };
+        const got = cn.name(new ChordMock(), analyzed);
+        expect(got).toBe("C9");
+      });
+
+      test("Cm9", () => {
+        const analyzed: AnalyzedChord = {
+          thirdType: "Minor",
+          seventhType: "Minor",
+          ninethType: "Valid",
+          lowersByRoot: [],
+        };
+        const got = cn.name(new ChordMock(), analyzed);
+        expect(got).toBe("Cm9");
+      });
+    });
+
+    describe("7thがMajorな9th", () => {
+      test("CM9", () => {
+        const analyzed: AnalyzedChord = {
+          thirdType: "Major",
+          seventhType: "Major",
+          ninethType: "Valid",
+          lowersByRoot: [],
+        };
+        const got = cn.name(new ChordMock(), analyzed);
+        expect(got).toBe("CM9");
+      });
+
+      test("CmM9", () => {
+        const analyzed: AnalyzedChord = {
+          thirdType: "Minor",
+          seventhType: "Major",
+          ninethType: "Valid",
+          lowersByRoot: [],
+        };
+        const got = cn.name(new ChordMock(), analyzed);
+        expect(got).toBe("CmM9");
+      });
     });
   });
 });
