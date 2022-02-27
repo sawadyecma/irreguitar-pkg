@@ -24,6 +24,7 @@ describe("name", () => {
       const analyzed: AnalyzedChord = {
         thirdType: "None",
         seventhType: "None",
+        ninethType: "None",
         lowersByRoot: [],
       };
       const got = cn.name(new ChordMock(), analyzed);
@@ -34,6 +35,7 @@ describe("name", () => {
       const analyzed: AnalyzedChord = {
         thirdType: "Major",
         seventhType: "Major",
+        ninethType: "None",
         lowersByRoot: [],
       };
       const got = cn.name(new ChordMock(), analyzed);
@@ -44,6 +46,7 @@ describe("name", () => {
       const analyzed: AnalyzedChord = {
         thirdType: "Minor",
         seventhType: "Minor",
+        ninethType: "None",
         lowersByRoot: [new AbsnoteImpl(Absnotes.D2)],
       };
       const got = cn.name(new ChordMock(), analyzed);
@@ -54,6 +57,7 @@ describe("name", () => {
       const analyzed: AnalyzedChord = {
         thirdType: "Minor",
         seventhType: "Major",
+        ninethType: "None",
         lowersByRoot: [new AbsnoteImpl(Absnotes.E2)],
       };
       const got = cn.name(new ChordMock(), analyzed);
@@ -64,6 +68,7 @@ describe("name", () => {
       const analyzed: AnalyzedChord = {
         thirdType: "None",
         seventhType: "Major",
+        ninethType: "None",
         lowersByRoot: [],
       };
       const got = cn.name(new ChordMock(), analyzed);
@@ -74,6 +79,7 @@ describe("name", () => {
       const analyzed: AnalyzedChord = {
         thirdType: "Invalid",
         seventhType: "Major",
+        ninethType: "None",
         lowersByRoot: [],
       };
       const got = cn.name(new ChordMock(), analyzed);
@@ -84,6 +90,7 @@ describe("name", () => {
       const analyzed: AnalyzedChord = {
         thirdType: "Major",
         seventhType: "Invalid",
+        ninethType: "None",
         lowersByRoot: [],
       };
       const got = cn.name(new ChordMock(), analyzed);
@@ -94,6 +101,7 @@ describe("name", () => {
       const analyzed: AnalyzedChord = {
         thirdType: "Major",
         seventhType: "Major",
+        ninethType: "None",
         lowersByRoot: [
           new AbsnoteImpl(Absnotes.D2),
           new AbsnoteImpl(Absnotes.E2),

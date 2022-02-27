@@ -1,3 +1,4 @@
+import { NinethType } from "..";
 import { Chord } from "../sound/interfaces";
 import { AnalyzedChord, ChordNamer, Lentype } from "./interfaces";
 
@@ -25,39 +26,75 @@ export class ChordNamerImpl implements ChordNamer {
   }
 
   private stdChordType(analyzed: AnalyzedChord): string | undefined {
-    return analyzedTransfomer[analyzed.thirdType][analyzed.seventhType];
+    return analyzedTransfomer[analyzed.thirdType]?.[analyzed.seventhType]?.[
+      analyzed.ninethType
+    ];
   }
 }
 
 const analyzedTransfomer: {
-  // Third
-  [key in Lentype]: {
-    // Seventh
-    [key in Lentype]?: string;
+  // 3rd
+  [key in Lentype]?: {
+    // 7th
+    [key in Lentype]?: {
+      // 9th
+      [key in NinethType]?: string;
+    };
   };
 } = {
   None: {
-    None: "(omit3)",
-    Major: "M7(omit3)",
-    Minor: "m7(omit3)",
+    None: {
+      None: "(omit3)",
+      Valid: "add9",
+      Invalid: undefined,
+    },
+    Major: {
+      None: "M7(omit3)",
+      Valid: "M9(omit3)",
+      Invalid: undefined,
+    },
+    Minor: {
+      None: "m7(omit3)",
+      Valid: "m9(omit3)",
+      Invalid: undefined,
+    },
     Invalid: undefined,
   },
   Major: {
-    None: "",
-    Major: "M7",
-    Minor: "7",
+    None: {
+      None: "",
+      Valid: "add9",
+      Invalid: undefined,
+    },
+    Major: {
+      None: "M7",
+      Valid: "M9",
+      Invalid: undefined,
+    },
+    Minor: {
+      None: "7",
+      Valid: "9",
+      Invalid: undefined,
+    },
     Invalid: undefined,
   },
   Minor: {
-    None: "m",
-    Major: "mM7",
-    Minor: "m7",
+    None: {
+      None: "m",
+      Valid: "madd9",
+      Invalid: undefined,
+    },
+    Major: {
+      None: "mM7",
+      Valid: "mM9",
+      Invalid: undefined,
+    },
+    Minor: {
+      None: "m7",
+      Valid: "m9",
+      Invalid: undefined,
+    },
     Invalid: undefined,
   },
-  Invalid: {
-    None: undefined,
-    Major: undefined,
-    Minor: undefined,
-    Invalid: undefined,
-  },
+  Invalid: undefined,
 };
