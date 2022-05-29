@@ -7,7 +7,7 @@ import { TurningImpl } from "./turning";
 export const TURNING_CATALOG = {
   Regular: new TurningImpl(
     new Map<ThreadNum, Thread>([
-      [6, new ThreadImpl(new AbsnoteImpl(Absnotes.E3))],
+      [6, new ThreadImpl(new AbsnoteImpl(Absnotes.E4))],
       [5, new ThreadImpl(new AbsnoteImpl(Absnotes.A4))],
       [4, new ThreadImpl(new AbsnoteImpl(Absnotes.D5))],
       [3, new ThreadImpl(new AbsnoteImpl(Absnotes.G5))],
@@ -17,7 +17,7 @@ export const TURNING_CATALOG = {
   ),
   HalfDown: new TurningImpl(
     new Map<ThreadNum, Thread>([
-      [6, new ThreadImpl(new AbsnoteImpl(Absnotes.Eb3))],
+      [6, new ThreadImpl(new AbsnoteImpl(Absnotes.Eb4))],
       [5, new ThreadImpl(new AbsnoteImpl(Absnotes.Ab4))],
       [4, new ThreadImpl(new AbsnoteImpl(Absnotes.Db5))],
       [3, new ThreadImpl(new AbsnoteImpl(Absnotes.Gb5))],
@@ -27,7 +27,7 @@ export const TURNING_CATALOG = {
   ),
   DADGAD: new TurningImpl(
     new Map<ThreadNum, Thread>([
-      [6, new ThreadImpl(new AbsnoteImpl(Absnotes.D3))],
+      [6, new ThreadImpl(new AbsnoteImpl(Absnotes.D4))],
       [5, new ThreadImpl(new AbsnoteImpl(Absnotes.A4))],
       [4, new ThreadImpl(new AbsnoteImpl(Absnotes.D5))],
       [3, new ThreadImpl(new AbsnoteImpl(Absnotes.G5))],
@@ -37,7 +37,7 @@ export const TURNING_CATALOG = {
   ),
   DropD: new TurningImpl(
     new Map<ThreadNum, Thread>([
-      [6, new ThreadImpl(new AbsnoteImpl(Absnotes.D3))],
+      [6, new ThreadImpl(new AbsnoteImpl(Absnotes.D4))],
       [5, new ThreadImpl(new AbsnoteImpl(Absnotes.A4))],
       [4, new ThreadImpl(new AbsnoteImpl(Absnotes.D5))],
       [3, new ThreadImpl(new AbsnoteImpl(Absnotes.G5))],
@@ -47,7 +47,7 @@ export const TURNING_CATALOG = {
   ),
   DAEDbAE: new TurningImpl(
     new Map<ThreadNum, Thread>([
-      [6, new ThreadImpl(new AbsnoteImpl(Absnotes.D3))],
+      [6, new ThreadImpl(new AbsnoteImpl(Absnotes.D4))],
       [5, new ThreadImpl(new AbsnoteImpl(Absnotes.A4))],
       [4, new ThreadImpl(new AbsnoteImpl(Absnotes.E5))],
       [3, new ThreadImpl(new AbsnoteImpl(Absnotes.A5))],
