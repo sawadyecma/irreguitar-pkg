@@ -1,8 +1,8 @@
-import { Absnote } from "../sound/interfaces";
+import { Absnote } from '../sound/interfaces'
 
 export interface Thread {
-  getOpenNote(): Absnote;
-  getNote(flet: number): Absnote;
+  getOpenNote(): Absnote
+  getNote(flet: number): Absnote
 }
 
-export type ThreadNum = number;
+export type ThreadNum = number

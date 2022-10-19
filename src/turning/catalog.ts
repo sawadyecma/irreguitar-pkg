@@ -1,8 +1,8 @@
-import { Thread, ThreadNum } from "../guitar/interfaces";
-import { ThreadImpl } from "../guitar/thread";
-import { AbsnoteImpl } from "../sound/absnote";
-import { Absnotes } from "../sound/absnotes";
-import { TurningImpl } from "./turning";
+import { Thread, ThreadNum } from '../guitar/interfaces'
+import { ThreadImpl } from '../guitar/thread'
+import { AbsnoteImpl } from '../sound/absnote'
+import { Absnotes } from '../sound/absnotes'
+import { TurningImpl } from './turning'
 
 export const TURNING_CATALOG = {
   Regular: new TurningImpl(
@@ -55,4 +55,4 @@ export const TURNING_CATALOG = {
       [1, new ThreadImpl(new AbsnoteImpl(Absnotes.E6))],
     ])
   ),
-};
+}

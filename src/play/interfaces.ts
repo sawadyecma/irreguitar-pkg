@@ -1,11 +1,11 @@
-import { Chord } from "..";
-import { ThreadNum } from "../guitar/interfaces";
+import { Chord } from '..'
+import { ThreadNum } from '../guitar/interfaces'
 
 export interface Play {
-  getChord(rootPress: Press, presses: Press[]): Chord;
+  getChord(rootPress: Press, presses: Press[]): Chord
 }
 
 export interface Press {
-  threadNum: ThreadNum;
-  flet: number;
+  threadNum: ThreadNum
+  flet: number
 }

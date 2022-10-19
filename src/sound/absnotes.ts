@@ -146,23 +146,23 @@ const absnoteHash: { [key: string]: Absnotes } = {
   A6: Absnotes.A6,
   Bb6: Absnotes.Bb6,
   B6: Absnotes.B6,
-};
+}
 
-export const absnoteValues = Object.values(absnoteHash);
-export const absnoteKeys = Object.keys(absnoteHash);
+export const absnoteValues = Object.values(absnoteHash)
+export const absnoteKeys = Object.keys(absnoteHash)
 
 export function getAbsnote(key: string): {
-  absnote?: Absnotes;
-  success: boolean;
+  absnote?: Absnotes
+  success: boolean
 } {
   if (Object.values(Absnotes).includes(key)) {
-    return { absnote: absnoteHash[key], success: true };
+    return { absnote: absnoteHash[key], success: true }
   }
 
-  return { success: false };
+  return { success: false }
 }
 
 export function getAbsnoteName(absnote: Absnotes): { key: string } {
-  const index = absnoteValues.indexOf(absnote);
-  return { key: absnoteKeys[index] };
+  const index = absnoteValues.indexOf(absnote)
+  return { key: absnoteKeys[index] }
 }

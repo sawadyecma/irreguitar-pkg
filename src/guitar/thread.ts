@@ -1,18 +1,18 @@
-import { Absnote } from "../sound/interfaces";
-import { Thread } from "./interfaces";
+import { Absnote } from '../sound/interfaces'
+import { Thread } from './interfaces'
 
 export class ThreadImpl implements Thread {
-  private openNote: Absnote;
+  private openNote: Absnote
 
   constructor(openNote: Absnote) {
-    this.openNote = openNote;
+    this.openNote = openNote
   }
 
   getOpenNote(): Absnote {
-    return this.openNote;
+    return this.openNote
   }
 
   getNote(flet: number): Absnote {
-    return this.openNote.up(flet);
+    return this.openNote.up(flet)
   }
 }
