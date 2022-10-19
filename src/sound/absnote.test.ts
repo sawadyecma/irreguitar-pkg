@@ -57,8 +57,8 @@ describe('up', () => {
     }).toThrowError()
   })
 
-  test('B6+1=>Error', () => {
-    const a = new AbsnoteImpl(Absnotes.B6)
+  test('B10+1=>Error', () => {
+    const a = new AbsnoteImpl(Absnotes.B10)
     expect(() => {
       a.up(+1)
     }).toThrowError()
