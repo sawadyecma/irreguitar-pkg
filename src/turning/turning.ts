@@ -20,4 +20,19 @@ export class TurningImpl implements Turning {
     }
     return th.getNote(flet)
   }
+
+  getCompositionName(): string {
+    const thNums = this.getThreadNums()
+    const threads = this.getThreads()
+
+    const descSortedThNums = thNums.sort((a, b) => b - a)
+
+    return descSortedThNums
+      .map((thnm) => {
+        const thread = threads.get(thnm)
+        if (!thread) throw new Error('Unexpected thnm')
+        return thread.getOpenNote().getName({ onlyPrefix: true })
+      })
+      .join('')
+  }
 }

@@ -5,4 +5,5 @@ export interface Turning {
   getThreads(): Map<ThreadNum, Thread>
   getThreadNums(): ThreadNum[]
   getNote(thnm: ThreadNum, flet: number): Absnote
+  getCompositionName(): string
 }

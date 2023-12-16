@@ -13,4 +13,8 @@ describe('Regular Turning', () => {
     expect(t.getNote(5, 0)).toEqual(new AbsnoteImpl(Absnotes.A4))
     expect(t.getNote(4, 12)).toEqual(new AbsnoteImpl(Absnotes.D6))
   })
+
+  test('getCompositionName', () => {
+    expect(t.getCompositionName()).toEqual('EADGBE')
+  })
 })
